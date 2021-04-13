@@ -1,7 +1,5 @@
-import { createApp } from 'vue';
-import App from '@/App.vue';
 import router from '@/router';
-import app from '@/ElPlus.ts';
+import app from '@/ElPlus.js';
 
 app.use(router);
 app.mount('#app');

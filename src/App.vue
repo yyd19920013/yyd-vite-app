@@ -1,12 +1,11 @@
 <template>
-  <router-view />
+    <router-view />
 </template>
-
-<script>
+<script lang='ts'>
 export default {
-  name: 'App',
-  setup() {
+    name: 'App',
+    setup() {
 
-  }
+    }
 }
 </script>

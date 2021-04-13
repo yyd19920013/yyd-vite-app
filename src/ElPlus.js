@@ -170,21 +170,15 @@ const components = [
   ElUpload,
 ];
 
-const plugins = [
-  ElInfiniteScroll,
-  ElLoading,
-  ElMessage,
-  ElMessageBox,
-  ElNotification,
-];
+const plugins = [ElInfiniteScroll, ElLoading, ElMessage, ElMessageBox, ElNotification];
 
 const app = createApp(App);
 
-components.forEach(component => {
+components.forEach((component) => {
   app.component(component.name, component);
 });
 
-plugins.forEach(plugin => {
+plugins.forEach((plugin) => {
   app.use(plugin);
 });
 
