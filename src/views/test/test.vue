@@ -17,14 +17,10 @@ export default {
     CuttingLine,
   },
   data() {
-    return {
-
-    };
+    return {};
   },
   setup(props: object, context: object) {
-    return {
-
-    };
+    return {};
   },
 };
 </script>
