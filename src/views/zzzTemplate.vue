@@ -1,8 +1,7 @@
 <template>
-  <div class="name">
-  </div>
+  <div class="name"></div>
 </template>
-<script>
+<script lang="ts">
 import { onMounted } from 'vue';
 
 export default {
@@ -11,11 +10,12 @@ export default {
 
     };
   },
-  setup(props, context) {
-    return {};
+  setup(props: object, context: object) {
+    return {
+
+    };
   },
 };
 </script>
 <style lang="scss" scoped>
-.name {}
 </style>

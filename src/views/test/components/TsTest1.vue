@@ -1,5 +1,5 @@
 <template>
-  <div class="home"></div>
+  <div class="TsTest1"></div>
 </template>
 <script lang="ts">
 import { onMounted } from 'vue';
