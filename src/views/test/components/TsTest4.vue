@@ -79,7 +79,7 @@ export default {
     };
     let cardPicker = deck.createCardPicker();
     let pickedCard = cardPicker();
-    alert('card：' + pickedCard.card + ' of ' + pickedCard.suit);
+    // alert('card：' + pickedCard.card + ' of ' + pickedCard.suit);
     interface Card {
       suit: string;
       card: number;
@@ -103,7 +103,7 @@ export default {
     }
     let cardPicker1 = deck1.createCardPicker();
     let pickedCard1 = cardPicker();
-    alert('card：' + pickedCard.card + ' of ' + pickedCard.suit);
+    // alert('card：' + pickedCard.card + ' of ' + pickedCard.suit);
     interface UIElement {
       addClickListner(onclick: (this: void, e: Event) => void): void;
     }

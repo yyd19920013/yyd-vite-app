@@ -94,26 +94,26 @@ export default {
     function create<T>(c: { new(): T; }): T {
       return new c();
     }
-    class BeeKeeper {
-      hasMask: boolean = false;
-    }
-    class ZooKeeper {
-      nametag: string = '';
-    }
-    class Animal {
-      numLegs: number = 0;
-    }
-    class Bee extends Animal {
-      keeper: BeeKeeper;
-    }
-    class Lion extends Animal {
-      keeper: ZooKeeper;
-    }
-    function createInstance<A extends Animal>(c: new () => A): A {
-      return new c();
-    }
-    createInstance(Lion).keeper.nametag;
-    createInstance(Bee).keeper.hasMask;
+    // class BeeKeeper {
+    //   hasMask: boolean = false;
+    // }
+    // class ZooKeeper {
+    //   nametag: string = '';
+    // }
+    // class Animal {
+    //   numLegs: number = 0;
+    // }
+    // class Bee extends Animal {
+    //   keeper: BeeKeeper;
+    // }
+    // class Lion extends Animal {
+    //   keeper: ZooKeeper;
+    // }
+    // function createInstance<A extends Animal>(c: new () => A): A {
+    //   return new c();
+    // }
+    // createInstance(Lion).keeper.nametag;
+    // createInstance(Bee).keeper.hasMask;
 
     console.log('%c --------------------泛型--------------------', 'color:red;');
     return {

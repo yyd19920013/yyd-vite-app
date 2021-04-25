@@ -7,6 +7,7 @@
     <TsTest3 />
     <TsTest4 />
     <TsTest5 />
+    <TsTest6 />
   </div>
 </template>
 <script lang="ts">
@@ -16,6 +17,7 @@ import TsTest2 from './components/TsTest2.vue';
 import TsTest3 from './components/TsTest3.vue';
 import TsTest4 from './components/TsTest4.vue';
 import TsTest5 from './components/TsTest5.vue';
+import TsTest6 from './components/TsTest6.vue';
 import CuttingLine from './components/CuttingLine.vue';
 
 export default {
@@ -26,6 +28,7 @@ export default {
     TsTest3,
     TsTest4,
     TsTest5,
+    TsTest6,
     CuttingLine,
   },
   data() {
