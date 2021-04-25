@@ -241,8 +241,8 @@ export default {
     let greeter3: Greeter2 = new greeterMaker();
     console.log(greeter2.greet());
     class Point {
-      x: number;
-      y: number;
+      x: number = 0;
+      y: number = 0;
     }
     interface Point3d extends Point {
       z: number;
