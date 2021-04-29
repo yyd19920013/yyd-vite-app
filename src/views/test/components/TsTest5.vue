@@ -2,9 +2,9 @@
   <div class="name"></div>
 </template>
 <script lang="ts">
-import { onMounted } from 'vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   data() {
     return {
 
@@ -120,7 +120,7 @@ export default {
 
     };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 </style>

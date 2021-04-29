@@ -5,7 +5,7 @@
     <div>ref：{{ num }}</div>
     <div>readonly computed：{{ rComputed }}</div>
     <div>writable computed：{{ wComputed }}</div>
-    <el-button @click="increment('2')">点击增加</el-button>
+    <el-button @click="increment(2)">点击增加</el-button>
     <el-button @click="add">点击增加</el-button>
     <el-button @click="write">点击改值</el-button>
     <button @click="color = 'red'">红色</button>
@@ -14,6 +14,7 @@
     <h3 ref="h3Ref">TemplateRefOne</h3>
     <div class="line">-------------------分割线------------------</div>
     <button @click="showContent">showContent</button>
+    <el-button type="primary" @click="popup">弹出</el-button>
   </div>
 </template>
 <script lang="ts">
@@ -30,6 +31,7 @@ import {
   onUpdated,
   onUnmounted,
   provide,
+  getCurrentInstance,
 } from 'vue';
 
 export default defineComponent({
@@ -84,8 +86,8 @@ export default defineComponent({
       console.log('watchRef', num, oldNum);
       if (num > 5) {
         const watchStop = watch(
-          () => {},
-          () => {}
+          () => { },
+          () => { }
         );
 
         watchStop();
@@ -96,6 +98,7 @@ export default defineComponent({
 
     onMounted(() => {
       h3Ref.value.style.color = '#ff0000';
+      getCurrentInstance()?.appContext.config.globalProperties.$message.success("showtime");
       console.log('mounted!');
     });
     onUpdated(() => {
@@ -121,6 +124,21 @@ export default defineComponent({
       write,
       showContent,
     };
+  },
+  mounted() {
+    let obj = { a: { b: { c: 1 } } };
+    console.log(obj?.a?.b?.c);
+    console.dir(this);
+    // (<any>this).$message({
+    //   message: 'hello',
+    // });
+  },
+  methods: {
+    async popup(): Promise<void> {
+      let res = await (<any>this).isConfirm('确定弹出吗？');
+      if (!res) return;
+      console.log('确定弹出');
+    },
   },
 });
 </script>
