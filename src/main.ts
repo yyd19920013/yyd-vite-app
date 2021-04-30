@@ -40,6 +40,7 @@ plugins.forEach((plugin) => {
   app.use(plugin);
 });
 app.config.globalProperties.$services = services;
+// 该函数会自动注册components文件夹中属性带有autoRegComponent: true的.vue组件，组件属性name进行自定义组件名称
 regComponents(app);
 app.mount('#App');
 export default app;
