@@ -2,6 +2,7 @@ import App from './App.vue';
 import { createApp } from 'vue';
 import 'element-plus/packages/theme-chalk/src/base.scss';
 import { components, plugins } from './components/elementPlus';
+import commonMixinPlugin from './plugins/commonMixinPlugin';
 import router from './router';
 import store from './store';
 
@@ -28,12 +29,13 @@ router.afterEach(() => {
 const app = createApp(App);
 app.use(router);
 app.use(store);
-app.mount('#App');
+app.use(commonMixinPlugin);
 components.forEach((component: any) => {
   app.component(component.name, component);
 });
 plugins.forEach((plugin) => {
   app.use(plugin);
 });
+app.mount('#App');
 
 export default app;
