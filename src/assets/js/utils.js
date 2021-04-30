@@ -1,6 +1,7 @@
 // JavaScript Document
+import md5 from 'md5';
 import axios from 'axios';
-import vm from '@/main';
+import { ElMessage } from 'element-plus';
 
 //ajax包装
 //支持回调函数和promise两种风格
@@ -1992,7 +1993,7 @@ function throttle(fn, msec) {
 //noMask（是否去除遮罩）
 function alerts(str, msec, noMask) {
   if (!isPhone()) {
-    return vm.$ele.message({
+    return ElMessage({
       message: str,
       type: msec || 'warning',
       duration: noMask || 3000,
@@ -2721,6 +2722,7 @@ function controlBodyScroll(disableScroll, goTop) {
 //项目中用到的工具函数
 export {
   //常用第三方插件
+  md5,
   //网络请求
   ajaxWrap,
   axiosWrap,
