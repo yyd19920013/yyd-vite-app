@@ -1,6 +1,6 @@
 import { fileType, alerts } from 'js/utils.js';
 
-interface file {
+interface File {
   name: string;
   size: number;
 }
@@ -18,7 +18,7 @@ export default {
           cancelButtonText: string
         ): Promise<boolean> {
           return new Promise((resolve, reject) => {
-            (<any>this)
+            (this as any)
               .$messageBox({
                 title: '提示',
                 message,
@@ -41,7 +41,7 @@ export default {
           title = '提示'
         ): Promise<boolean> {
           return new Promise((resolve, reject) => {
-            (<any>this)
+            (this as any)
               .$messageBox({
                 title,
                 message,
@@ -54,11 +54,11 @@ export default {
               });
           });
         },
-        isImageAndLimit(file: file): boolean {
-          let { name = '', size = 0 } = file;
-          let arr = name.split('.');
-          let isImage = fileType(arr[arr.length - 1]) == 'image';
-          let isLt = size / 1024 / 1024 < 5;
+        isImageAndLimit(file: File): boolean {
+          const { name = '', size = 0 } = file;
+          const arr = name.split('.');
+          const isImage = fileType(arr[arr.length - 1]) === 'image';
+          const isLt = size / 1024 / 1024 < 5;
 
           console.log('isImageAndLimit', name);
           if (!isImage) {
@@ -69,9 +69,9 @@ export default {
           }
           return isImage && isLt;
         },
-        isExcelAndLimit(file: file): boolean {
-          let isSheet = fileType(file.name.split('.')[1]) == 'excel';
-          let isLt = file.size / 1024 / 1024 < 5;
+        isExcelAndLimit(file: File): boolean {
+          const isSheet = fileType(file.name.split('.')[1]) === 'excel';
+          const isLt = file.size / 1024 / 1024 < 5;
 
           if (!isSheet) {
             alerts('导入的文件格式不对，请导入Excel格式', 'warning');

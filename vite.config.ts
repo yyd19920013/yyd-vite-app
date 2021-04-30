@@ -22,13 +22,12 @@ export default defineConfig({
     https: false,
     proxy: {
       '/api': {
-        //这里最好有一个 /
+        // 这里最好有一个 /
         target, // 服务器端接口地址
-        //如果要代理 websockets，配置这个参数
-        ws: false,
+        ws: false, // 如果要代理 websockets，配置这个参数
         // 如果是https接口，需要配置这个参数
-        changeOrigin: true, //是否跨域
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        changeOrigin: true, // 是否跨域
+        rewrite: (pathName) => pathName.replace(/^\/api/, ''),
       },
     },
   },

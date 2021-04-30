@@ -22,7 +22,7 @@ export default defineComponent({
   },
   methods: {
     async getList() {
-      let res = await testAxios({ pageIndex: 1, pageSize: 10 });
+      const res = await testAxios({ pageIndex: 1, pageSize: 10 });
 
       console.log(res);
     },

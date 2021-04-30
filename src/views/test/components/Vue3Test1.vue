@@ -71,8 +71,8 @@ export default defineComponent({
     const add = () => {
       num.value++;
     };
-    const increment = (num: number) => {
-      state.count += num;
+    const increment = (num1: number) => {
+      state.count += num1;
     };
     const write = () => {
       wComputed.value = 99;
@@ -81,10 +81,10 @@ export default defineComponent({
       console.log('showContent', helloRef.value.content);
     };
 
-    watch([() => state.count, () => state.count1, num], ([count, count1, num], [oldCount, oldCount1, oldNum]) => {
+    watch([() => state.count, () => state.count1, num], ([count, count1, num2], [oldCount, oldCount1, oldNum]) => {
       console.log('watchState', count, count1, oldCount, oldCount1);
-      console.log('watchRef', num, oldNum);
-      if (num > 5) {
+      console.log('watchRef', num2, oldNum);
+      if (num2 > 5) {
         const watchStop = watch(
           () => { },
           () => { }
@@ -98,7 +98,7 @@ export default defineComponent({
 
     onMounted(() => {
       h3Ref.value.style.color = '#ff0000';
-      getCurrentInstance()?.appContext.config.globalProperties.$message.success("showtime");
+      getCurrentInstance()?.appContext.config.globalProperties.$message.success('showtime');
       console.log('mounted!');
     });
     onUpdated(() => {
@@ -126,7 +126,7 @@ export default defineComponent({
     };
   },
   mounted() {
-    let obj = { a: { b: { c: 1 } } };
+    const obj = { a: { b: { c: 1 } } };
     console.log(obj?.a?.b?.c);
     console.dir(this);
     // (<any>this).$message({
@@ -135,7 +135,7 @@ export default defineComponent({
   },
   methods: {
     async popup(): Promise<void> {
-      let res = await (<any>this).isConfirm('确定弹出吗？');
+      const res = await (this as any).isConfirm('确定弹出吗？');
       if (!res) return;
       console.log('确定弹出');
     },
