@@ -6,10 +6,10 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { testAxios } from '@/services';
 import { date } from '@/filters';
 
 export default defineComponent({
+  autoRegPage: true,
   data() {
     return {
       date,
@@ -22,7 +22,7 @@ export default defineComponent({
   },
   methods: {
     async getList() {
-      const res = await testAxios({ pageIndex: 1, pageSize: 10 });
+      const res = await (this as any).$services.testAxios({ pageIndex: 1, pageSize: 10 });
 
       console.log(res);
     },

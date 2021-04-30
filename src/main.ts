@@ -5,6 +5,8 @@ import { components, plugins } from './components/elementPlus';
 import commonMixinPlugin from './plugins/commonMixinPlugin';
 import router from './router';
 import store from './store';
+import services from './services';
+import { regComponents } from './router/autoReg';
 
 // 路由改变之前显示loading
 router.beforeEach((to, from, next) => {
@@ -27,6 +29,7 @@ router.afterEach(() => {
 });
 
 const app = createApp(App);
+
 app.use(router);
 app.use(store);
 app.use(commonMixinPlugin);
@@ -36,6 +39,7 @@ components.forEach((component: any) => {
 plugins.forEach((plugin) => {
   app.use(plugin);
 });
+app.config.globalProperties.$services = services;
+regComponents(app);
 app.mount('#App');
-
 export default app;

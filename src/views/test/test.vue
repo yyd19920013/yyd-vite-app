@@ -29,6 +29,7 @@ import TsTest10 from './components/TsTest10.vue';
 import CuttingLine from './components/CuttingLine.vue';
 
 export default {
+  autoRegPage: true,
   components: {
     VueTest1,
     TsTest1,

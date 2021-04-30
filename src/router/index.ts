@@ -1,18 +1,12 @@
 import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router';
+import { getRoutes } from './autoReg';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/home/home',
   },
-  {
-    path: '/test',
-    component: () => import('@/views/test/test.vue'),
-  },
-  {
-    path: '/home',
-    component: () => import('@/views/home/home.vue'),
-  },
+  ...getRoutes(),
 ];
 const router = createRouter({
   history: createWebHashHistory(),

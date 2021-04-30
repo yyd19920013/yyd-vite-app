@@ -5,12 +5,12 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  autoRegPage: true,
   data() {
     return {
 
     };
   },
-
   setup(props: object, context: object) {
     return {
 
@@ -19,5 +19,5 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "css/public.scss";
+@import "@/assets/css/public.scss";
 </style>

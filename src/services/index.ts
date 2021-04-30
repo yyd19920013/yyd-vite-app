@@ -6,6 +6,13 @@ import {
   axiosWrap,
 } from '@/assets/js/utils.js';
 import CONFIG_JSON from '@/services/config';
+const paths = import.meta.glob('./modules/*.ts');
+const contents = import.meta.globEager('./modules/*.ts');
+const modules: any = {};
+
+Object.keys(paths).forEach((item) => {
+  Object.assign(modules, contents[item]);
+});
 
 // @ts-ignore
 const COMMON = CONFIG_JSON[__ENV || 'develop'];
@@ -38,16 +45,18 @@ const CONFIG = Object.assign({}, COMMON, {
   API, // api请求函数
   testAxios, // axios请求示例
 });
+const SERVICES = Object.assign({}, CONFIG, modules);
 const { envName, baseUrl } = CONFIG;
 
 // @ts-ignore
 console.log('当前环境：', __ENV);
 console.log('当前环境配置：', CONFIG);
+console.log('SERVICES', SERVICES);
+
 export {
   envName,
   baseUrl,
   API, // api请求函数
   testAxios, // axios请求示例
 };
-export * from './modules/test1';
-export * from './modules/test2';
+export default SERVICES;

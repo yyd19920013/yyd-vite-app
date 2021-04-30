@@ -2,9 +2,10 @@
   <div class="name"></div>
 </template>
 <script lang="ts">
-import { onMounted } from 'vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
+  autoRegComponent: true,
   data() {
     return {
 
@@ -15,8 +16,8 @@ export default {
 
     };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
-@import "css/public.scss";
+@import "@/assets/css/public.scss";
 </style>
