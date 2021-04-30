@@ -1,6 +1,6 @@
 // JavaScript Document
 import axios from 'axios';
-import vm from 'src/main';
+import vm from '@/main';
 
 //ajax包装
 //支持回调函数和promise两种风格
@@ -332,7 +332,7 @@ function axiosWrap(config) {
 
   function changeLoading(bool) {
     try {
-      var store = import('store');
+      var store = import('@/store');
 
       store.then((data) => {
         data.default.commit({
@@ -345,7 +345,7 @@ function axiosWrap(config) {
 
   function changeRefresh(bool, status) {
     try {
-      var store = import('store');
+      var store = import('@/store');
 
       store.then((data) => {
         data.default.commit({

@@ -6,7 +6,7 @@ import {
   getWeekName,
   getAge,
   toFixed0,
-} from 'js/utils.js';
+} from '@/assets/js/utils.js';
 
 const date = (value: string, format?: string): string => {
   if (!value && value !== '0') return '';

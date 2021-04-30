@@ -1,4 +1,4 @@
-import { fileType, alerts } from 'js/utils.js';
+import { fileType, alerts } from '@/assets/js/utils.js';
 
 interface File {
   name: string;

@@ -9,7 +9,7 @@ import Loading from '@/components/common/Loading.vue';
 import { defineComponent } from 'vue';
 import { mapState } from 'vuex';
 
-interface state {
+interface State {
   isLoading: boolean;
   showRefreshBt: boolean;
   status: number;
@@ -24,28 +24,28 @@ export default defineComponent({
 
   computed: {
     ...mapState({
-      isLoading(state: state) {
+      isLoading(state: State) {
         return state.isLoading;
       },
-      showRefreshBt(state: state) {
+      showRefreshBt(state: State) {
         return state.showRefreshBt;
       },
-      status(state: state) {
+      status(state: State) {
         return state.status;
       },
     })
   },
 
   created() {
-    //挂载刷新方法在window上
-    (<any>window).webviewRefresh = (<any>this).webviewRefresh;
+    // 挂载刷新方法在window上
+    (window as any).webviewRefresh = (this as any).webviewRefresh;
   },
 
   methods: {
     webviewRefresh() {
-      (<any>this).onOff = false;
-      (<any>this).$nextTick(() => {
-        (<any>this).onOff = true;
+      (this as any).onOff = false;
+      (this as any).$nextTick(() => {
+        (this as any).onOff = true;
       });
     },
   },
@@ -56,5 +56,5 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-@import "css/index.scss";
+@import "@/assets/css/index.scss";
 </style>

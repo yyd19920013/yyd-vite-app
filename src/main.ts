@@ -2,7 +2,7 @@ import App from './App.vue';
 import { createApp } from 'vue';
 import 'element-plus/packages/theme-chalk/src/base.scss';
 import { components, plugins } from './components/elementPlus';
-import commonMixinPlugin from '@/plugins/commonMixinPlugin';
+import commonMixinPlugin from './plugins/commonMixinPlugin';
 import router from './router';
 import store from './store';
 

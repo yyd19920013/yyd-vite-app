@@ -28,29 +28,29 @@ export default defineComponent({
   */
 
   props: {
-    showLoading: { //是否显示Loading
+    showLoading: { // 是否显示Loading
       type: Boolean,
       default: false,
     },
-    showRefreshBt: { //是否显示刷新按钮
+    showRefreshBt: { // 是否显示刷新按钮
       type: Boolean,
       default: false,
     },
     status: {
-      type: [Number, String], //请求服务器状态
+      type: [Number, String], // 请求服务器状态
       default: '',
     },
   },
 
   methods: {
     refresh() {
-      (<any>window).webviewRefresh();
+      (window as any).webviewRefresh();
     },
   },
 });
 </script>
 <style lang="scss" scoped>
-@import "css/public.scss";
+@import "@/assets/css/public.scss";
 
 .Loading {
   position: fixed;

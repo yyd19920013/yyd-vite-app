@@ -13,18 +13,7 @@
     "baseUrl": ".",
     "types": ["vite/client"],
     "paths": {
-      "@/*": ["src/*"],
-      "src/*": ["src/*"],
-      "components/*": ["src/components/*"],
-      "views/*": ["src/views/*"],
-      "router/*": ["src/router/*"],
-      "store/*": ["src/store/*"],
-      "services/*": ["src/services/*"],
-      "filters/*": ["src/filters/*"],
-      "assets/*": ["src/assets/*"],
-      "js/*": ["src/assets/js/*"],
-      "css/*": ["src/assets/css/*"],
-      "images/*": ["src/assets/images/*"]
+      "@/*": ["src/*"]
     },
     "lib": [
       "esnext",

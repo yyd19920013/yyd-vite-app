@@ -34,17 +34,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': pathResolve('./src'),
-      src: pathResolve('./src'),
-      components: pathResolve('./src/components'),
-      views: pathResolve('./src/views'),
-      router: pathResolve('./src/router'),
-      store: pathResolve('./src/store'),
-      services: pathResolve('./src/services'),
-      filters: pathResolve('./src/filters'),
-      assets: pathResolve('./src/assets'),
-      js: pathResolve('./src/assets/js'),
-      css: pathResolve('./src/assets/css'),
-      images: pathResolve('./src/assets/images'),
     },
   },
   plugins: [
