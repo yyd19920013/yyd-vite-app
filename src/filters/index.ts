@@ -8,38 +8,36 @@ import {
   toFixed0,
 } from '@/assets/js/utils.js';
 
-const date = (value: string, format?: string): string => {
-  if (!value && value !== '0') return '';
+const date = (value: string | number | Date, format?: string) => {
+  if (!value && value !== 0) return '';
   return dateFormat0(value, format);
 };
 
-const date1 = (value: string) => {
-  if (!value && value !== '0') return;
+const date1 = (value: string | number | Date) => {
+  if (!value && value !== 0) return;
   return dateFormat1(value);
 };
 
 const date2 = (value: string) => {
-  if (!value && value !== '0') return;
+  if (!value) return;
   const reg = /\-+/g;
-
   value = value.replace(reg, '/');
-
   const iDay = (+new Date() - +new Date(value)) / (1000 * 60 * 60 * 24);
+
   return Math.round(iDay) || 1;
 };
 
 const date3 = (value: string) => {
-  if (!value && value !== '0') return;
+  if (!value) return;
   const reg = /\-+/g;
-
   value = value.replace(reg, '/');
-
   const iDay = (+new Date(value) - +new Date()) / (1000 * 60 * 60 * 24);
+
   return iDay > 0 ? Math.ceil(iDay) : 0;
 };
 
-const week = (value: string) => {
-  if (!value && value !== '0') return;
+const week = (value: string | number | Date) => {
+  if (!value && value !== 0) return;
 
   return getWeekName(value);
 };
