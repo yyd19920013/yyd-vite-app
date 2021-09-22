@@ -1470,9 +1470,10 @@ var idCardNo = {
   },
   getIdCardNoCheckInfo: function (idCardNo) {
     //获取身份证号码校验信息
-    var regTestResult = /^[1-8]\d{5}[1-9]\d{3}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|3[0-1])\d{3}[\dxX]$/.test(
-      idCardNo
-    );
+    var regTestResult =
+      /^[1-8]\d{5}[1-9]\d{3}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|3[0-1])\d{3}[\dxX]$/.test(
+        idCardNo
+      );
     var idCardNo = this.normalIdCardNo(idCardNo);
     var checkResult = [
       regTestResult,
@@ -1731,7 +1732,8 @@ function amountFormat0(value, dLength, cLength) {
 
 //判断是否是手机浏览器
 function isPhone() {
-  var reg = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i;
+  var reg =
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i;
   return window.navigator.userAgent.match(reg) ? true : false;
 }
 
@@ -1749,7 +1751,8 @@ function isSafari() {
 
 //判断设备跳转不同地址
 function goPage(moHref, pcHref) {
-  var reg = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i;
+  var reg =
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i;
 
   window.location.href = navigator.userAgent.match(reg) ? moHref : pcHref;
 }

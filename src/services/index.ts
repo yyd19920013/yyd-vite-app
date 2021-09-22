@@ -1,10 +1,4 @@
-import {
-  cookie,
-  lStore,
-  sStore,
-  alerts,
-  axiosWrap,
-} from '@/assets/js/utils.js';
+import { axiosWrap } from '@/assets/js/utils.js';
 import CONFIG_JSON from '@/services/config';
 const paths = import.meta.glob('./modules/*.ts');
 const contents = import.meta.globEager('./modules/*.ts');

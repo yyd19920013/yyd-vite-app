@@ -5,15 +5,10 @@
   </div>
 </template>
 <script lang="ts">
+import { StateObj } from '@/store/interface';
 import Loading from '@/components/common/Loading.vue';
 import { defineComponent } from 'vue';
 import { mapState } from 'vuex';
-
-interface State {
-  isLoading: boolean;
-  showRefreshBt: boolean;
-  status: number;
-}
 
 export default defineComponent({
   data() {
@@ -24,13 +19,13 @@ export default defineComponent({
 
   computed: {
     ...mapState({
-      isLoading(state: State) {
+      isLoading(state: StateObj) {
         return state.isLoading;
       },
-      showRefreshBt(state: State) {
+      showRefreshBt(state: StateObj) {
         return state.showRefreshBt;
       },
-      status(state: State) {
+      status(state: StateObj) {
         return state.status;
       },
     })
