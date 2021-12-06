@@ -18,27 +18,21 @@ const state: StateObj = {
   status: '', // 服务器错误状态
 };
 
+// 非Module格式：xxxx
+// 使用了Module的格式：ModuleName.xxxx，这里持久化的是Theme Module下面的persistData数据
+const PERSIST_PATHS: string[] = ['isLoading']
 const store = createStore({
-  plugins: [
-    (createPersistedState as any)({
-      storage: window.localStorage,
-      reducer(resState: any) {
-        const blackList = ['status', 'isLoading', 'showRefreshBt']; // 加入黑名单的state不会被持久化
-
-        for (const attr in resState) {
-          if (blackList.includes(attr)) {
-            delete resState[attr];
-          }
-        }
-        return resState;
-      },
-    }),
-  ],
-  modules,
-  state,
-  getters,
-  actions,
-  mutations,
-});
+    plugins: [
+        (createPersistedState as any)({
+            storage: window.localStorage,
+            paths: PERSIST_PATHS,
+        }),
+    ],
+    modules,
+    state,
+    getters,
+    actions,
+    mutations,
+})
 
 export default store;

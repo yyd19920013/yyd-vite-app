@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div>首页</div>
     <div>{{ date('2021/4/29') }}</div>
     <el-button type="primary" @click="getList">请求接口数据</el-button>
   </div>
